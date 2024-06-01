@@ -23,7 +23,7 @@ public MainWindow()
             InitializeComponent();
             timer = new DispatcherTimer();
             
-            string connectionString = "server=195.20.234.224;port=5500;user=TimyBase;password=Test1234;database=TimyBase;Allow User Variables=True;";
+            string connectionString = "server=195.20.234.224;port=5500;user=Test;password=TEST;database=TEST;Allow User Variables=True;";
             ConnectionString = connectionString;
             
             if(File.Exists(@"../config.txt"))
