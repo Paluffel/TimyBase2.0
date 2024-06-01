@@ -1,0 +1,308 @@
+<Window
+    Background="Transparent"
+    ExtendClientAreaToDecorationsHint="True"
+    Height="450"
+    Title="AvaloniaApplication2"
+    TransparencyLevelHint="AcrylicBlur"
+    Width="800"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d"
+    x:Class="AvaloniaApplication2.MainWindow"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:avalonia="clr-namespace:LiveChartsCore.SkiaSharpView.Avalonia;assembly=LiveChartsCore.SkiaSharpView.Avalonia"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Panel>
+        <ExperimentalAcrylicBorder IsHitTestVisible="True">
+            <ExperimentalAcrylicBorder.Material>
+                <ExperimentalAcrylicMaterial
+                    BackgroundSource="Digger"
+                    MaterialOpacity="0.65"
+                    TintColor="#FF2E2E3D"
+                    TintOpacity="2" />
+            </ExperimentalAcrylicBorder.Material>
+        </ExperimentalAcrylicBorder>
+
+        <Grid Background="Transparent" IsHitTestVisible="True">
+
+            <!--  Main layout divided into Sidebar and Content  -->
+            <!--  Login window with Username and password  -->
+
+            <DockPanel>
+                <!--  Sidebar with Home and Settings  -->
+                <StackPanel
+                    Background="#FF3E3E50"
+                    DockPanel.Dock="Left"
+                    Width="200">
+                    <Button
+                        Background="#FF555570"
+                        Foreground="White"
+                        Height="40"
+                        HorizontalContentAlignment="Center"
+                        Margin="10,30,0,10"
+                        VerticalContentAlignment="Center"
+                        Width="180">
+                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                            <Image
+                                Height="20"
+                                Margin="0,0,5,0"
+                                Source="file:///Users/paulschramm/RiderProjects/AvaloniaApplication2/AvaloniaApplication2/home.png"
+                                Width="20" />
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                Margin="0,3,0,0"
+                                Text="Home" />
+                        </StackPanel>
+                    </Button>
+
+                    <Button
+                        Background="#FF555570"
+                        Content="Settings"
+                        Foreground="White"
+                        Height="40"
+                        HorizontalContentAlignment="Center"
+                        Margin="10,0,0,0"
+                        VerticalContentAlignment="Center"
+                        Width="180" />
+                    <!--  Additional sidebar items  -->
+                </StackPanel>
+
+                <!--  Content Area  -->
+                <Grid Margin="10">
+                    <!--  Top Menu Bar  -->
+                    <Grid
+                        Background="BlueViolet"
+                        Height="30"
+                        Margin="0,0,0,450"
+                        Opacity="0.3"
+                        RowDefinitions="Auto,*"
+                        Width="1000" />
+                    <Grid
+                        Grid.Row="1"
+                        Margin="0,40,0,0"
+                        RowDefinitions="*,Auto">
+                        <Button
+                            Foreground="White"
+                            Height="140"
+                            HorizontalContentAlignment="Center"
+                            Margin="0,-20,0,0"
+                            VerticalAlignment="Top"
+                            VerticalContentAlignment="Center"
+                            Width="200"
+                            x:Name="btn_come">
+                            <StackPanel>
+                                <Image
+                                    Height="50"
+                                    Margin="0,0,5,0"
+                                    Source="file:///Users/paulschramm/RiderProjects/AvaloniaApplication2/AvaloniaApplication2/come_white.png"
+                                    VerticalAlignment="Top"
+                                    Width="50" />
+                                <TextBlock
+                                    FontSize="20"
+                                    FontWeight="Bold"
+                                    HorizontalAlignment="Center"
+                                    Margin="0,10,0,0"
+                                    Text="Kommen" />
+                            </StackPanel>
+                        </Button>
+                        <Button
+                            Foreground="White"
+                            Height="140"
+                            HorizontalContentAlignment="Center"
+                            Margin="210,-20,0,0"
+                            VerticalAlignment="Top"
+                            VerticalContentAlignment="Center"
+                            Width="200"
+                            x:Name="btn_go">
+                            <StackPanel>
+
+                                <Image Height="50" Width="50">
+                                    <Image.RenderTransform>
+                                        <ScaleTransform ScaleX="-1" ScaleY="1" />
+                                    </Image.RenderTransform>
+                                    <Image.Source>
+                                        file:///Users/paulschramm/RiderProjects/AvaloniaApplication2/AvaloniaApplication2/come_white.png
+                                    </Image.Source>
+                                </Image>
+                                <TextBlock
+                                    FontSize="20"
+                                    FontWeight="Bold"
+                                    HorizontalAlignment="Center"
+                                    Margin="0,10,0,0"
+                                    Text="Gehen" />
+                            </StackPanel>
+                        </Button>
+                        <Button
+                            Foreground="White"
+                            Height="65"
+                            HorizontalContentAlignment="Center"
+                            Margin="420,-20,0,0"
+                            VerticalAlignment="Top"
+                            VerticalContentAlignment="Center"
+                            Width="160">
+                            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                                <Image
+                                    Height="25"
+                                    Margin="0,0,5,0"
+                                    Source="file:///Users/paulschramm/RiderProjects/AvaloniaApplication2/AvaloniaApplication2/home.png"
+                                    Width="25" />
+                                <TextBlock
+                                    FontWeight="Bold"
+                                    HorizontalAlignment="Center"
+                                    Margin="0,6,0,0"
+                                    Text="Pause" />
+                            </StackPanel>
+                        </Button>
+                        <Button
+                            Foreground="White"
+                            Height="65"
+                            HorizontalContentAlignment="Center"
+                            Margin="420,55,0,0"
+                            VerticalAlignment="Top"
+                            VerticalContentAlignment="Center"
+                            Width="160">
+                            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                                <Image
+                                    Height="25"
+                                    Margin="0,0,5,0"
+                                    Source="file:///Users/paulschramm/RiderProjects/AvaloniaApplication2/AvaloniaApplication2/home.png"
+                                    Width="25" />
+                                <TextBlock
+                                    FontWeight="Bold"
+                                    HorizontalAlignment="Center"
+                                    Margin="0,6,0,0"
+                                    Text="Profile" />
+                            </StackPanel>
+                        </Button>
+                        <Grid
+                            Grid.Row="0"
+                            Margin="0,0,0,50"
+                            x:Name="tabgrid">
+                            <TabControl
+                                Background="DimGray"
+                                CornerRadius="5"
+                                Foreground="White"
+                                Height="260"
+                                Margin="0,130,0,0">
+                                <TabItem
+                                    FontSize="18"
+                                    FontWeight="Black"
+                                    Foreground="White"
+                                    Header="Heute">
+                                    <Grid>
+                                        <TextBlock
+                                            FontSize="20"
+                                            HorizontalAlignment="Center"
+                                            Margin="0,5,5,5">
+                                            Arbeitszeit
+                                        </TextBlock>
+                                        <!--  Clock that updates every 5 min  -->
+                                        <TextBlock
+                                            FontSize="90"
+                                            Foreground="White"
+                                            HorizontalAlignment="Center"
+                                            Margin="0,30,0,0"
+                                            x:Name="txt_time">
+                                            12:30:00
+                                        </TextBlock>
+                                    </Grid>
+                                </TabItem>
+                                <TabItem
+                                    FontSize="18"
+                                    FontWeight="Black"
+                                    Foreground="White"
+                                    Header="Woche">
+                                    <avalonia:PieChart />
+                                </TabItem>
+                                <TabItem
+                                    FontSize="18"
+                                    FontWeight="Black"
+                                    Foreground="White"
+                                    Header="Export">
+                                    <TextBlock Margin="5">This is tab 3 content</TextBlock>
+                                </TabItem>
+                            </TabControl>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </DockPanel>
+            <!--  Login grid  -->
+            <Grid IsVisible="False" x:Name="LoginGrid">
+
+                <!--  Login window  -->
+                <Rectangle
+                    Fill="Black"
+                    Height="200"
+                    Width="250" />
+                <TextBlock
+                    FontSize="20"
+                    Foreground="White"
+                    HorizontalAlignment="Center"
+                    Margin="-100,0,0,100"
+                    VerticalAlignment="Center">
+                    User
+                </TextBlock>
+            </Grid>
+            <Grid
+                Background="Black"
+                IsVisible="False"
+                x:Name="logingrid">
+                <Border
+                    Background="Gray"
+                    CornerRadius="10"
+                    Height="100"
+                    Width="250" />
+                <Grid IsVisible="False" x:Name="ProfileGrid">
+                    <Image
+                        Height="25"
+                        Margin="0,0,110,0"
+                        Source="file:///Users/paulschramm/RiderProjects/AvaloniaApplication2/AvaloniaApplication2/home.png"
+                        Width="25" />
+                    <TextBlock
+                        FontWeight="Bold"
+                        Foreground="White"
+                        HorizontalAlignment="Center"
+                        Margin="0,6,0,0"
+                        Text="Profile"
+                        VerticalAlignment="Center" />
+                </Grid>
+                <Grid x:Name="Serverloggrid">
+                    <!--  create a server login with user name and password  -->
+                    <TextBox
+                        Height="15"
+                        Margin="0,-40,0,0"
+                        Width="120"
+                        x:Name="Username">
+                        Username
+                    </TextBox>
+                    <TextBox
+                        Height="15"
+                        KeyDown="Password_OnKeyDown"
+                        Margin="0,40,0,0"
+                        Width="120"
+                        x:Name="Password">
+                        Password
+                    </TextBox>
+                </Grid>
+
+            </Grid>
+            <Grid x:Name="Error_Message" IsVisible="False">
+                <Rectangle Fill="Black" />
+                <Label
+                    Content="Der Benutzername oder das Passwort ist falsch, oder der User existiert nicht."
+                    Foreground="White"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    x:Name="er_lable" />
+                <Button
+                    Content="Zum Login Fenseter"
+                    HorizontalAlignment="Center"
+                    Margin="0,60,0,0"
+                    VerticalAlignment="Center" />
+            </Grid>
+        </Grid>
+    </Panel>
+</Window>
